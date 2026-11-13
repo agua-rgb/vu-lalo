@@ -3,7 +3,7 @@
   let qty = 5;
   let purchased = false;
   let timer = null;
-  let seconds = 2;
+  let seconds = 5;
 
   const qtyValue = document.getElementById('qtyValue');
   const summaryQty = document.getElementById('summaryQty');
@@ -53,7 +53,7 @@
   }
 
   function openModal(){
-    seconds = 2;
+    seconds = 5;
     countdown.textContent = seconds;
     confirmModal.hidden = false;
     timer = setInterval(() => {
