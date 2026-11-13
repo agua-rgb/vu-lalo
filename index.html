@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NorthAir — Flight Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">NORTHAIR</div>
+  <nav>
+    <button class="nav-link" data-view="shop">Flights</button>
+    <button class="nav-link" data-view="orders">Orders</button>
+  </nav>
+  <div class="account">My account</div>
+</header>
+
+<main class="container">
+  <section id="shopView">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Your trip</div>
+        <h1>Mexico City → New York</h1>
+        <p class="muted">Friday, November 27, 2026 · One way</p>
+      </div>
+      <div class="pill">NA 482</div>
+    </div>
+
+    <div class="layout">
+      <section class="panel">
+        <div class="flight">
+          <div><div class="time">08:15</div><div class="muted">MEX</div></div>
+          <div class="route"><div class="line"></div><div class="muted">4h 45m · Nonstop</div></div>
+          <div class="right"><div class="time">14:00</div><div class="muted">JFK</div></div>
+        </div>
+
+        <div class="fare">
+          <div>
+            <div class="label">Fare</div>
+            <strong>Standard Economy</strong>
+          </div>
+          <strong>$12,400 MXN / ticket</strong>
+        </div>
+
+        <div class="quantity">
+          <div>
+            <div class="label">Passengers</div>
+            <h2>Ticket quantity</h2>
+            <p class="muted">Review the number of tickets before purchasing.</p>
+          </div>
+          <div class="stepper">
+            <button id="minusBtn">−</button>
+            <span id="qtyValue">5</span>
+            <button id="plusBtn">+</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="summary">
+        <h2>Cart summary</h2>
+        <div class="row"><span>Tickets</span><strong id="summaryQty">5</strong></div>
+        <div class="row"><span>Price per ticket</span><strong>$12,400 MXN</strong></div>
+        <div class="divider"></div>
+        <div class="row total"><span>Total</span><strong id="summaryTotal">$62,000 MXN</strong></div>
+        <button id="buyBtn" class="primary">Buy now</button>
+        <p class="small">You can review the purchase details before final processing.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="successView" hidden>
+    <div class="success-card">
+      <div class="check">✓</div>
+      <h1>Purchase successful</h1>
+      <p>Your booking has been completed.</p>
+      <p class="muted">Booking reference: <strong>NA-5X4821</strong></p>
+      <button id="viewOrdersBtn" class="secondary">View order</button>
+    </div>
+  </section>
+
+  <section id="ordersView" hidden>
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Account</div>
+        <h1>Orders</h1>
+      </div>
+    </div>
+
+    <div id="noOrders" class="panel">
+      <h2>No completed orders yet</h2>
+      <p class="muted">Completed bookings will appear here.</p>
+    </div>
+
+    <article id="orderCard" class="order-card" hidden>
+      <div class="order-top">
+        <div>
+          <div class="order-id">Order NA-5X4821</div>
+          <div class="muted">Mexico City → New York</div>
+        </div>
+        <div class="paid">Paid</div>
+      </div>
+      <div class="order-grid">
+        <div><div class="label">Tickets purchased</div><div class="big">5</div></div>
+        <div><div class="label">Total charged</div><div class="big-price">$62,000 MXN</div></div>
+        <div><div class="label">Travel date</div><div>November 27, 2026</div></div>
+      </div>
+      <div class="warning">This booking contains 5 passenger tickets.</div>
+    </article>
+  </section>
+</main>
+
+<div id="confirmModal" class="modal-backdrop" hidden>
+  <div class="modal">
+    <div class="icon">⚠️</div>
+    <h2>Final purchase confirmation</h2>
+    <p class="alert">You are about to purchase <strong>5 tickets</strong> for this flight.</p>
+    <div class="confirm-total"><span>Total charge</span><strong>$62,000 MXN</strong></div>
+    <p class="countdown-copy">This purchase will be processed automatically in <strong><span id="countdown">2</span> seconds</strong>.</p>
+    <div class="actions">
+      <button id="cancelBtn" class="danger">Cancel purchase</button>
+      <button id="processNowBtn" class="primary">Process now</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
