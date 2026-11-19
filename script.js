@@ -3,7 +3,7 @@
   let qty = 5;
   let purchased = false;
   let timer = null;
-  let seconds = 5;
+  let seconds = 15;
 
   const qtyValue = document.getElementById('qtyValue');
   const summaryQty = document.getElementById('summaryQty');
