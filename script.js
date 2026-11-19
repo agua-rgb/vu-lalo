@@ -1,6 +1,6 @@
 (() => {
   const PRICE = 12400;
-  let qty = 5;
+  let qty = 15;
   let purchased = false;
   let timer = null;
   let seconds = 15;
