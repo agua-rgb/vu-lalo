@@ -53,7 +53,7 @@
   }
 
   function openModal(){
-    seconds = 5;
+    seconds = 15;
     countdown.textContent = seconds;
     confirmModal.hidden = false;
     timer = setInterval(() => {
